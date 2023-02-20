@@ -18,7 +18,7 @@ function MainPage() {
           </h5>
         </h2>
 
-        <p className="w-1/2 px-8 py-1 my-6 text-lg font-semibold tracking-widest text-center text-orange-400 border-2 rounded-lg bg-transparentS">
+        <p className="w-full md:w-1/2 px-8 py-1 my-6 text-lg font-semibold tracking-widest text-center text-orange-400 border-2 rounded-lg bg-transparentS">
           Rajan's Fitness Factory is a place for training and exercise, as well
           as to unwind, socialize, and recharge. Consequently, a good gym is a
           facility that promotes physical activity, provides a safe, functional,
