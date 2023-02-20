@@ -1,5 +1,5 @@
 import { withFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import Input from "./Input";
 import * as Yup from "yup";
 
@@ -14,6 +14,11 @@ const Registration = ({
   isValid,
   handleReset,
 }) => {
+  const [checked, setChecked] = useState(null);
+  const handleCheckboxClick = (value) => {
+    setChecked(value);
+  };
+  const checkboxes = ["Male", "Femaile"];
   return (
     <form
       onSubmit={handleSubmit}
@@ -94,7 +99,32 @@ const Registration = ({
         errors={errors.dateOfBirth}
         value={values.dateOfBirth}
       />
-
+      <div>
+        {checkboxes.map((option) => (
+          <div
+            className="flex gap-2 items-start justify-start w-full font-bold"
+            key={option}
+          >
+            <label>
+              <input
+                name={option}
+                id={option}
+                type="checkbox"
+                checked={checked === option}
+                onClick={() => handleCheckboxClick(option)}
+                className="w-12 h-4"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                onFocus={handleFocus}
+                touched={touched.option}
+                errors={errors.option}
+                value={values.option}
+              />
+              {option}
+            </label>
+          </div>
+        ))}
+      </div>
       <div className="flex justify-end w-full gap-4">
         <button
           type="button"
@@ -123,6 +153,8 @@ export default withFormik({
     mobileNumber: "",
     address: "",
     dateOfBirth: "",
+    Male: "",
+    Female: "",
   }),
 
   handleSubmit: (values) => {
@@ -134,7 +166,9 @@ export default withFormik({
       values.email,
       values.mobileNumber,
       values.address,
-      values.dateOfBirth
+      values.dateOfBirth,
+      values.Male,
+      values.Female
     );
   },
 

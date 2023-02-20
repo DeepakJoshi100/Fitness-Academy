@@ -50,16 +50,13 @@ function MainPage() {
           <p className="duration-500 hover:text-black hover:translate-x-2">
             The gym has the following key features:
           </p>
-          <ul
-            type="circle"
-            className="flex flex-col gap-4 my-2 text-sm font-black text-black "
-          >
-            <li>* Trainee at the gym</li>
-            <li>* A good protein and supplement diet</li>
-            <li>* Seated Dip Machine</li>
-            <li>* Bench Press</li>
-            <li>* Decline Bench Press</li>
-            <li>* Incline Bench Press and many more.</li>
+          <ul className="flex flex-col gap-4 my-2 text-sm font-black text-black list-disc pl-8">
+            <li> Trainee at the gym</li>
+            <li> A good protein and supplement diet</li>
+            <li> Seated Dip Machine</li>
+            <li> Bench Press</li>
+            <li> Decline Bench Press</li>
+            <li> Incline Bench Press and many more.</li>
           </ul>
         </p>
         <div className="flex flex-col items-center gap-4 mb-10 text-4xl text-black">
