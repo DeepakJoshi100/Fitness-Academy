@@ -86,6 +86,7 @@ const Registration = ({
         name="dateOfBirth"
         id="dateOfBirth"
         placeholder="Date_Of_Birth"
+        type="date"
         onChange={handleChange}
         onBlur={handleBlur}
         onFocus={handleFocus}
@@ -125,6 +126,7 @@ export default withFormik({
   }),
 
   handleSubmit: (values) => {
+    alert(`Registration Completed ${values.firstName + values.lastName}`);
     console.log(
       "sending data",
       values.firstName,
@@ -146,6 +148,6 @@ export default withFormik({
       .min(10, "Mobile_Number cannot be less than 10 character.")
       .required("Mobile_Number required"),
     address: Yup.string().required("Address required."),
-    dateOfBirth: Yup.date().required("Required Date_Of_Birth."),
+    dateOfBirth: Yup.string().required("Required Date_Of_Birth."),
   }),
 })(Registration);
